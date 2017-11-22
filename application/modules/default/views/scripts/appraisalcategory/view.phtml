@@ -68,9 +68,13 @@ if($this->ermsg == '')  { ?>
     ?>
    </div>
    <?php 
+   if (!empty($this->data['weightage']))
+   {$weightage = $this->data['weightage']*100;}
+   else
+   {$weightage = "...";}
 sapp_Helper::viewHeader();
 sapp_Helper::viewBody('alt','Parameter ',(!empty($this->data['category_name']))?$this->data['category_name']:"...",'Description',(!empty($this->data['description']))?$this->data['description']:"...");
-sapp_Helper::viewBody('alt','Weightage ',(!empty($this->data['weightage']))?$this->data['weightage']:"...",'','');
+sapp_Helper::viewBody('alt','Weightage ',$weightage."%",'','');
 
 sapp_Helper::viewFooter();
 ?>
