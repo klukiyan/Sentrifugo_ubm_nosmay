@@ -246,11 +246,13 @@ class Default_AppraisalcategoryController extends Zend_Controller_Action
             $id = $this->_request->getParam('id');
             $appraisal_category_name = $this->_request->getParam('category_name');	
 			$description = $this->_request->getParam('description');
+			$weightage = $this->_request->getParam('weightage');
 			$actionflag = '';
 			$tableid  = ''; 
 			   $data = array('category_name'=>$appraisal_category_name, 
 							 'description'=>($description!=''?trim($description):NULL),
 							  'modifiedby'=>$loginUserId,
+							  'weightage'=>$weightage,
 							  'modifieddate'=>gmdate("Y-m-d H:i:s")
 					);
 				if($id!=''){

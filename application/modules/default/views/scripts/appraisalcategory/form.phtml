@@ -60,7 +60,7 @@ if($this->ermsg !='')
 			        <div class="total-form-controller <?php echo $viewclass;?>">
 						<?php echo sapp_Helper::sd_form_helper($this->msgarray, $this->form, 'category_name', 'Special characters allowed are - ? &#39; . , / # @ $ & * ( ) ! +','','required',array());?>
 						<?php echo sapp_Helper::sd_form_helper($this->msgarray, $this->form, 'description','', 'textareaheight','',array());?>
-								
+						<?php echo sapp_Helper::sd_form_helper($this->msgarray, $this->form, 'weightage','', 'textareaheight','',array());?>
 					<div class="new-form-ui-submit">
 					<?php echo $this->form->submit; ?>
 					<?php if($actionName == 'addpopup') { ?>

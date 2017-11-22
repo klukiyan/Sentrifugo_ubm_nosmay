@@ -54,12 +54,24 @@ class Default_Form_Appraisalcategory extends Zend_Form
         $description->setAttrib('rows', 10);
         $description->setAttrib('cols', 50);
 		$description ->setAttrib('maxlength', '200');
+		
+		$weightage = new Zend_Form_Element_Select('weightage');
+		$weightage->setLabel("Weightage");
+		$weightage->setAttrib('class', 'selectoption');
+		for ($m=1; $m<=10; $m++)
+			{
+				$weightage->addMultiOption($m/10, sprintf("%.0f%%", $m * 10));
+					//the .0f here stands for no decimals. if I put 2 there, it would be with 2 decimals
+			}
+		$weightage->setRequired(true);
+		$weightage->addValidator('NotEmpty', false, array('messages' => 'select weightage'));
+
 
         $submit = new Zend_Form_Element_Submit('submit');
 		$submit->setAttrib('id', 'submitbutton');
 		$submit->setLabel('Save');
 
-		 $this->addElements(array($id,$appraisalcategory,$description,$submit));
+		 $this->addElements(array($id,$appraisalcategory,$description,$submit,$weightage));
          $this->setElementDecorators(array('ViewHelper')); 
 	}
 }

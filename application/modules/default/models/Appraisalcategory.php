@@ -58,8 +58,8 @@ class Default_Model_Appraisalcategory extends Zend_Db_Table_Abstract
 			}
 			
 		$objName = 'appraisalcategory';
-		
-		$tableFields = array('action'=>'Action','category_name' => 'Parameter','description' => 'Description');
+		//2017-11-23 00:29:53 added the Weightage to GetGrid table
+		$tableFields = array('action'=>'Action','category_name' => 'Parameter','description' => 'Description','weightage' => 'Weightage');		
 		
 		$tablecontent = $this->getAppraisalCategoryData($sort, $by, $pageNo, $perPage,$searchQuery);     
 		
