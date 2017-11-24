@@ -321,6 +321,9 @@ protected function _getAcl()
 		 $acl->addResource(new Zend_Acl_Resource('default:ethniccode'));
                     $acl->allow('admin', 'default:ethniccode', array('index','view','edit','saveupdate','delete','addpopup'));
 
+        //KL added the expenses fix for 404
+        $acl->addResource(new Zend_Acl_Resource('expenses:expenses'));
+                    $acl->allow('admin', 'expenses:expenses', array('index','edit','clone','view','delete','addpopup','uploadsave','uploaddelete','displayreceipts','addtrippopup','submitexpense','addreceiptimage','expensestatus','listreportingmangers','viewmoremanagers','forwardexpenseto','downloadexpensepdf','bulkexpenses','getcategories','getprojects','getcurrency','uploadedfiles'));
 		 $acl->addResource(new Zend_Acl_Resource('default:feedforwardemployee'));
                     $acl->allow('admin', 'default:feedforwardemployee', array('index','edit','save'));
 
