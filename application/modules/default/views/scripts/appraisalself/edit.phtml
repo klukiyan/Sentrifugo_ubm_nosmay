@@ -193,7 +193,7 @@ if(empty($this->check_ratings_exists)) { ?>
 				{ 
 			?>
 			
-					<li><a href="#tabs-<?php echo $cd['id'];?>"><?php echo $cd['category_name'];?></a></li>
+					<li><a href="#tabs-<?php echo $cd['id'];?>"><?php echo $cd['category_name'].' ('.$cd['weightage']*100?>%)</a></li>
 					
 			<?php	}
 ?>				
